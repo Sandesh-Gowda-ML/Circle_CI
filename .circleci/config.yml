@@ -79,12 +79,12 @@ jobs:
             else 
               git config user.email "sandesh.gowda@maplelabs.com"
               git config user.name "Sandesh-Gowda-ML"
-              git checkout Sandesh_test
+              git checkout ttt
               git pull --no-commit 
               git status
               git add .
               git commit -m "Merge"
-              git merge circle
+              git merge test_branch
             fi                   
           
 # Invoke jobs via workflows
