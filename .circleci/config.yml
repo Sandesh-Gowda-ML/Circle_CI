@@ -59,7 +59,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            coverage run test_a.py
+            coverage run test_app.py
 
   merge: 
     docker:
@@ -71,8 +71,8 @@ jobs:
       - run:
           name: Run tests
           command: |
-            coverage run test_a.py 
-            echo $coverage report --fail-under=90 test_a.py
+            coverage run test_app.py 
+            echo $coverage report --fail-under=90 test_app.py
             # coverage report --fail-under=80
             if [ 'cat $(coverage report --fail-under=80)' != '']; then
               echo "FAIL"
