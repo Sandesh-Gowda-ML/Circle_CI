@@ -75,7 +75,7 @@ jobs:
             total_percentage=$(coverage report | awk ' NR==7 {print $4}')
             echo "${total_percentage}" 
             
-            if [ "${total_percentage}" <70 ]; then
+            if [ "${total_percentage}" < 70% ]; then
               echo "FAIL"
             else 
               echo "PASS"
