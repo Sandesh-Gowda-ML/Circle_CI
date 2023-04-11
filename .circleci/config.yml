@@ -73,8 +73,8 @@ jobs:
           command: |
             coverage run test_app.py 
             echo $coverage report --fail-under=90 test_app.py
-            # coverage report --fail-under=80
-            if [ 'cat $(coverage report --fail-under=80)' != '']; then
+            coverage report --fail-under=80
+            if [ $? != 0 ]; then
               echo "FAIL"
             else 
               git config user.email "sandesh.gowda@maplelabs.com"
