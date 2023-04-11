@@ -75,11 +75,10 @@ jobs:
             total_percentage=$(coverage report | awk ' NR==7 {print $4}')
             total_percentage="${total_percentage%"%"}"
             echo  "${total_percentage}"
-            
             if ((total_percentage<80)); then
-              echo "FAIL"
+              coverage report --fail-under=80
             else 
-              echo "PASS"
+              echo "Code Coverage is satisfied and can be merged to the main branch"
             fi                   
           
 # Invoke jobs via workflows
