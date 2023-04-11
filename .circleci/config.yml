@@ -73,9 +73,10 @@ jobs:
           command: |
             coverage run test_app.py 
             total_percentage=$(coverage report | awk ' NR==7 {print $4}')
-            echo "${total_percentage}" 
+            total_percentage="${total_percentage%"%"}"
+            echo  "${total_percentage}"
             
-            if [ "${total_percentage}" < 70% ]; then
+            if ((total_percentage<80)); then
               echo "FAIL"
             else 
               echo "PASS"
