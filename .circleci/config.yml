@@ -72,7 +72,7 @@ jobs:
           name: Run tests
           command: |
             coverage run test_app.py 
-            toatl_percentage=$(coverage report | awk ' NR==7 {print $4}')
+            total_percentage=$(coverage report | awk ' NR==7 {print $4}')
             echo "${total_percentage}" 
             
             # if [ coverage report | awk ' NR==7 {print $4}' <70 ]; then
