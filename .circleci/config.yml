@@ -73,7 +73,7 @@ jobs:
           command: |
             coverage run test_app.py 
             percentage =  $(coverage report | awk ' NR==7 {print $4}')
-            echo $percentage 
+            echo '$percentage' 
             
             # if [ coverage report | awk ' NR==7 {print $4}' <70 ]; then
             #   echo "FAIL"
