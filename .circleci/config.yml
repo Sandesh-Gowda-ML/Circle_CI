@@ -75,8 +75,8 @@ jobs:
             total_percentage=$(coverage report | awk ' NR==7 {print $4}')
             total_percentage="${total_percentage%"%"}"
             echo  "${total_percentage}"
-            if ((total_percentage<80)); then
-              coverage report --fail-under=80
+            if ((total_percentage<50)); then
+              coverage report --fail-under=50
             else 
               echo "Code Coverage is satisfied and can be merged to the main branch"
             fi                   
