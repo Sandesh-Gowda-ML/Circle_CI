@@ -72,8 +72,8 @@ jobs:
           name: Run tests
           command: |
             coverage run test_app.py 
-            percentage =  $(coverage report | awk ' NR==7 {print $4}')
-            echo '$percentage' 
+            toatl_percentage=$(coverage report | awk ' NR==7 {print $4}')
+            echo "${tptal_percentage}" 
             
             # if [ coverage report | awk ' NR==7 {print $4}' <70 ]; then
             #   echo "FAIL"
